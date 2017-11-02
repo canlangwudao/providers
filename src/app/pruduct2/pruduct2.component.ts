@@ -9,13 +9,13 @@ import { LoggerService } from '../shared/logger.service';
   styleUrls: ['./pruduct2.component.css'],
   providers: [
     { provide: ProductService, useClass: AnotherProductService}
-    ,LoggerService
+    , LoggerService
   ],
 })
 export class Pruduct2Component implements OnInit {
 
   private product: Product;
-  constructor(private productService:ProductService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.product = this.productService.getDetail();

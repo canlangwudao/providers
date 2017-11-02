@@ -9,7 +9,7 @@ import { ProductService, Product } from '../shared/product.service';
 export class Pruduct1Component implements OnInit {
 
   private product: Product;
-  constructor(private productService:ProductService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.product = this.productService.getDetail();

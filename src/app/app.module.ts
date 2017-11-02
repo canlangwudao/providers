@@ -17,26 +17,26 @@ import { AnotherProductService } from './shared/another-product.service';
   imports: [
     BrowserModule
   ],
-  // providers: [ProductService,LoggerService],
-  providers: [
-     {
-      provide: ProductService,
-      useFactory: (logger: LoggerService,appConfig)  => {
-        // let logger = new LoggerService();
-        // let isDev = Math.random() > 0.5;
-        if(appConfig.isDev) {
-          return new ProductService();
-        } else {
-          return new AnotherProductService(logger);
-        }
-      },
-      deps: [LoggerService,"APP_CONFIG" ]
-     },
-     LoggerService ,
-     { provide:"APP_CONFIG", useValue: {isDev: true} }
-  ],
+  providers: [ProductService, LoggerService],
+  // providers: [
+  //    {
+  //     provide: ProductService,
+  //     useFactory: ()  => {
+  //       const logger = new LoggerService();
+  //       const isDev = Math.random() > 0.5;
+  //       if (isDev) {
+  //         return new ProductService();
+  //       } else {
+  //         return new AnotherProductService(logger);
+  //       }
+  //     },
+  //     deps: [LoggerService, 'APP_CONFIG' ]
+  //    },
+  //    LoggerService ,
+  //    // { provide: 'APP_CONFIG', useValue: {isDev: true} }
+  // ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
 }
